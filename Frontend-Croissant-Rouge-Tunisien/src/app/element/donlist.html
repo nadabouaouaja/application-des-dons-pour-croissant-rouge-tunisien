@@ -1,0 +1,43 @@
+<div class="don-container">
+   <div class="header-bar">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+      class="logo"
+      alt="Croissant Rouge"
+    />
+
+  </div>
+
+  <h2 class="title">🌟 Mes dons</h2>
+
+  <button class="btn-add" (click)="addDon()">➕ Ajouter un don</button>
+
+  <p *ngIf="loading" class="loading">⏳ Chargement...</p>
+  <p *ngIf="message" class="msg">{{ message }}</p>
+
+  <div class="don-list" *ngIf="!loading && dons.length > 0">
+    <div class="don-card" *ngFor="let don of dons">
+
+      <div class="don-header">
+        <span class="don-type">{{ don.typeDon | uppercase }}</span>
+        <span class="don-date">📅 {{ don.dateDon }}</span>
+      </div>
+
+      <div class="don-content">
+        <p *ngIf="don.montant" class="amount">💰 {{ don.montant }} DT</p>
+        <p class="description">📝 {{ don.description }}</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn-edit" (click)="editDon(don.id)">✏ Modifier</button>
+        <button class="btn-delete" (click)="deleteDon(don.id)">🗑 Supprimer</button>
+      </div>
+
+    </div>
+  </div>
+
+  <p *ngIf="!loading && dons.length === 0" class="empty">
+    😕 Vous n’avez encore effectué aucun don.
+  </p>
+
+</div>

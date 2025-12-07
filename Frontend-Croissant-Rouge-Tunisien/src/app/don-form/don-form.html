@@ -1,0 +1,40 @@
+<div class="don-form-container">
+
+  <h2 class="don-title">💝 Faire un don</h2>
+  <p class="don-subtitle">
+    Chaque geste compte. Ensemble, offrons soutien et espoir aux plus vulnérables.
+  </p>
+
+  <form (ngSubmit)="submitDon()">
+
+    <label>Type de don :</label>
+    <select [(ngModel)]="donType" name="donType" required>
+      <option value="argent">💰 Don en argent</option>
+      <option value="nourriture">🍎 Nourriture</option>
+      <option value="vetements">🧥 Vêtements</option>
+    </select>
+
+    <!-- Champ montant si don en argent -->
+    <div *ngIf="donType === 'argent'">
+      <label>Montant (TND) :</label>
+      <input type="number" [(ngModel)]="montant" name="montant"
+             placeholder="Ex : 20, 50, 100..." required>
+    </div>
+
+    <label>Description :</label>
+    <textarea [(ngModel)]="description" name="description"
+              placeholder="Ajoutez une description pour aider les bénévoles..."
+              required>
+    </textarea>
+
+    <button type="submit">🤝 Je fais un don maintenant</button>
+  </form>
+
+  <!-- Message -->
+  <div *ngIf="message"
+       class="message"
+       [ngClass]="{ 'success': message.includes('succès'), 'error': message.includes('Erreur') }">
+    {{ message }}
+  </div>
+
+</div>

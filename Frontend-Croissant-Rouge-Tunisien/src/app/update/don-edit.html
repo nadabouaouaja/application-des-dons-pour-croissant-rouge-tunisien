@@ -1,0 +1,48 @@
+<div class="page-wrapper">
+
+  <!-- ===== BANDE AVEC LOGO ===== -->
+  <div class="header-bar">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+      class="logo"
+      alt="Croissant Rouge"
+    />
+    <h1 class="header-title">Modifier un don</h1>
+  </div>
+
+  <!-- ===== CONTENU ===== -->
+  <div class="edit-container">
+
+    <div *ngIf="loading" class="loading">⏳ Chargement...</div>
+    <p *ngIf="message" class="message">{{ message }}</p>
+
+    <form *ngIf="!loading" (ngSubmit)="saveChanges()">
+
+      <div class="field">
+        <label>Type de don :</label>
+        <select [(ngModel)]="donType" name="donType">
+          <option value="argent">💵 Argent</option>
+          <option value="nourriture">🍞 Nourriture</option>
+          <option value="vetements">👕 Vêtements</option>
+        </select>
+      </div>
+
+      <div class="field" *ngIf="donType === 'argent'">
+        <label>Montant (DT) :</label>
+        <input type="number" [(ngModel)]="montant" name="montant" placeholder="Montant du don" />
+      </div>
+
+      <div class="field">
+        <label>Description :</label>
+        <textarea [(ngModel)]="description" name="description" rows="4" placeholder="Décrivez votre don"></textarea>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn-save">💾 Enregistrer</button>
+        <button type="button" class="btn-cancel" (click)="cancel()">❌ Annuler</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

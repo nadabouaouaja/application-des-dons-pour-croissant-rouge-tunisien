@@ -1,0 +1,109 @@
+<div class="auth-page">
+
+  <!-- PARTIE GAUCHE -->
+  <div class="auth-left">
+    <div class="overlay">
+
+      <h1>Rejoignez une mission humanitaire</h1>
+
+      <p>
+        Ensemble, construisons un monde meilleur grâce aux actions du
+        Croissant Rouge Tunisien.
+      </p>
+
+      <img
+        class="humanitarian-img"
+        [src]="currentImage"
+        alt="Action humanitaire">
+
+    </div>
+  </div>
+
+  <!-- PARTIE DROITE -->
+  <div class="auth-right">
+    <div class="auth-card">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+        class="logo"
+        alt="Croissant Rouge">
+
+      <h2>Créer un compte</h2>
+
+      <!-- MESSAGE GLOBAL -->
+      <div class="message" *ngIf="message">{{ message }}</div>
+
+      <form (ngSubmit)="register()" #form="ngForm">
+
+        <!-- NOM -->
+        <input
+          class="short-input"
+          type="text"
+          [(ngModel)]="nom"
+          name="nom"
+          placeholder="Nom"
+          required />
+
+        <!-- PRENOM -->
+        <input
+          class="short-input"
+          type="text"
+          [(ngModel)]="prenom"
+          name="prenom"
+          placeholder="Prénom"
+          required />
+
+        <!-- EMAIL (FORMAT GENERAL) -->
+        <input
+          class="short-input"
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Adresse email"
+          required
+          #emailField="ngModel"
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+        />
+
+        <!-- ERREUR EMAIL -->
+        <div class="error" *ngIf="emailField.invalid && emailField.touched">
+          Email invalide ❌ (ex: nom@domaine.com)
+        </div>
+
+        <!-- MOT DE PASSE FORT -->
+        <input
+          class="short-input"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Mot de passe"
+          required
+          #passField="ngModel"
+        />
+
+        <!-- ERREUR MOT DE PASSE -->
+        <div class="error" *ngIf="passwordError">
+          Le mot de passe doit contenir au moins :
+          <ul>
+            <li>8 caractères</li>
+            <li>1 lettre</li>
+            <li>1 chiffre</li>
+            <li>1 caractère spécial</li>
+          </ul>
+        </div>
+
+        <!-- BOUTON -->
+        <button type="submit">
+          S'inscrire
+        </button>
+
+        <p class="link">
+          Vous avez déjà un compte ?
+          <a href="http://localhost:4200/login">Se connecter</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,145 @@
+/* ===================================
+   🔴 Design Premium Croissant Rouge
+=================================== */
+
+/* ==== FOND GLOBAL ==== */
+.page-wrapper {
+  min-height: 100vh;
+  padding: 40px 0;
+  background: radial-gradient(circle at top, #fcdede 20%, #ffcece 70%, #fceaea 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==== BARRE SUPÉRIEURE LOGO ==== */
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 2px solid #e50000;
+}
+
+.logo {
+  height: 55px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #b00000;
+  margin: 0;
+}
+
+/* ==== CONTENEUR PRINCIPAL ==== */
+.edit-container {
+  width: 90%;
+  max-width: 700px;
+  padding: 35px;
+  background: #fff5f5;
+  border-radius: 20px;
+  border: 2px solid #ff8686;
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.15),
+    inset 0 0 20px rgba(255,150,150,0.2);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ==== LABELS & INPUTS ==== */
+.field {
+  margin-bottom: 22px;
+}
+
+label {
+  font-weight: 700;
+  color: #7d0000;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #e0a0a0;
+  background: #fff;
+  transition: 0.25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ff2b2b;
+  box-shadow: 0 0 8px rgba(255,50,50,0.4);
+}
+
+/* ==== BOUTONS ==== */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn-save {
+  background: #0077ff;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 4px 10px rgba(0,120,255,0.3);
+}
+
+.btn-save:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background: #c2c2c2;
+  color: #222;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #999;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ==== MESSAGES ==== */
+.loading {
+  text-align: center;
+  font-size: 17px;
+  color: #c60000;
+  margin-bottom: 15px;
+}
+
+.message {
+  text-align: center;
+  color: #008000;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ==== ANIMATION ==== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

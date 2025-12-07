@@ -1,0 +1,78 @@
+<!-- src/app/admin/dashboard/dashboard.html -->
+<div class="layout-wrapper">
+
+  <!-- ===== SIDEBAR GAUCHE ===== -->
+  <aside class="sidebar">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+      class="sidebar-logo"
+      alt="Croissant Rouge"
+    />
+
+    <nav class="nav-links">
+      <a routerLink="/stat" class="nav-item">Statistiques</a>
+      <a routerLink="/admin" class="nav-item active">Gérer éléments</a>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTENU PRINCIPAL ===== -->
+  <div class="main-content">
+
+    <h2 class="title">⚙ Gestion des éléments</h2>
+    <p class="msg" *ngIf="message">{{ message }}</p>
+
+    <!-- ----- FORMULAIRE ---- -->
+    <div class="form-card">
+      <div class="form-title">➕ Ajouter / Modifier un élément</div>
+
+      <input type="text" placeholder="Nom (label)" [(ngModel)]="newElement.label">
+      <input type="text" placeholder="URL image" [(ngModel)]="newElement.image">
+
+      <textarea placeholder="Description" rows="3" [(ngModel)]="newElement.description"></textarea>
+
+      <div class="btn-row">
+        <button class="btn-save" *ngIf="!editMode" (click)="addElement()">Ajouter</button>
+        <button class="btn-edit" *ngIf="editMode" (click)="saveEdit()">Enregistrer</button>
+      </div>
+    </div>
+
+    <!-- ----- TABLEAU ----- -->
+    <div class="table-card">
+
+      <table class="elements-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Label</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let e of elements">
+            <td>{{ e.id }}</td>
+            <td>{{ e.label }}</td>
+
+            <td>
+              <img [src]="e.image" alt="img" class="preview">
+            </td>
+
+            <td class="desc">{{ e.description }}</td>
+
+            <td>
+              <div class="actions">
+                <button class="btn-act edit" (click)="enableEdit(e)">✏ Modifier</button>
+                <button class="btn-act delete" (click)="deleteElement(e.id)">🗑 Supprimer</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+</div>

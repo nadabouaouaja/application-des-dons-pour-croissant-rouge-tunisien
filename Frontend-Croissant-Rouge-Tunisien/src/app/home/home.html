@@ -1,0 +1,55 @@
+<header class="main-header">
+  <div class="logo">Croissant Rouge Tunisien</div>
+  <nav class="nav-menu">
+    <a routerLink="/"></a>
+     <a href="http://localhost:4200/">Accueil</a>
+     <a routerLink="/donlist">Mes dons</a>
+    <a (click)="logout()">Déconnexion</a>
+
+  </nav>
+</header>
+<!-- ELEMENTS -->
+<section class="elements-section">
+
+  <h2 class="category-title">Éléments disponibles pour le don</h2>
+
+  <div *ngIf="loading" class="loading">Chargement...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- ❗Toutes les cards dans LA MÊME GRILLE -->
+  <div class="elements-grid">
+  <ng-container *ngFor="let group of groupedElements">
+    <app-element-card
+      *ngFor="let el of group.items"
+      [element]="el">
+    </app-element-card>
+  </ng-container>
+</div>
+
+
+</section>
+
+
+
+
+<!-- HERO -->
+<section class="hero-section">
+  <h1 class="hero">Agir aujourd’hui pour sauver demain </h1>
+
+  <div class="quote-box">
+    <p class="quote-text">“ {{ currentQuote }} ”</p>
+    <button class="cta-btn">Faire un don</button>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <h2>Pourquoi votre aide est essentielle ?</h2>
+  <p>
+    Le Croissant Rouge Tunisien agit chaque jour pour sauver des vies,
+    apporter de l’aide d’urgence et soutenir les populations vulnérables.
+    <b>Chaque don compte.</b>
+  </p>
+</section>
+
+

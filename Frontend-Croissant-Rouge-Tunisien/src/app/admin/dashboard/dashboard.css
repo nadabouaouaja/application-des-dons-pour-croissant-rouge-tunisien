@@ -1,0 +1,175 @@
+/* ===========================================
+   🔴 CROISSANT ROUGE – ADMIN ELEMENTS
+   AVEC SIDEBAR
+   =========================================== */
+
+/* ---- LAYOUT ---- */
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 2px solid #d10000;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  padding-top: 25px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebar-logo {
+  height: 60px;
+  display: block;
+  margin: 0 auto 25px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  gap: 12px;
+}
+
+.nav-item {
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #fff3f3;
+  text-decoration: none;
+  font-weight: 600;
+  color: #b00000;
+  border: 1.5px solid transparent;
+  transition: .25s;
+}
+.nav-item:hover {
+  background: #ffe0e0;
+  border-color: #ff4d4d;
+  transform: translateX(6px);
+}
+.nav-item.active {
+  background: #ffcccc;
+  border-color: #d10000;
+}
+
+/* ---- CONTENT ---- */
+.main-content {
+  margin-left: 240px;
+  padding: 40px;
+  width: calc(100% - 240px);
+}
+
+.title {
+  text-align: center;
+  color: #b00000;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.msg {
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  color: green;
+}
+
+/* ---- FORM ---- */
+.form-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 6px solid #c40000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #b00000;
+  margin-bottom: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  transition: .2s;
+}
+input:focus,
+textarea:focus {
+  border-color: #e60000;
+  box-shadow: 0 0 5px rgba(255,0,0,0.3);
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn-save,
+.btn-edit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-save { background: #28a745; }
+.btn-edit { background: #007bff; }
+
+/* ---- TABLE ---- */
+.table-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 6px solid #b00000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.elements-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.elements-table th {
+  background: #ffe5e5;
+  padding: 12px;
+  color: #b00000;
+  font-size: 16px;
+}
+.elements-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.preview {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-act {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+.btn-act.edit { background: #007bff; }
+.btn-act.delete { background: #e60000; }

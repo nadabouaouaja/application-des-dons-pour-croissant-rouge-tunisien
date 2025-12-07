@@ -1,0 +1,99 @@
+/* Container principal */
+.don-form-container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  font-family: 'Inter', sans-serif;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Titre */
+.don-title {
+  text-align: center;
+  color: #a80000;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* Sous-texte */
+.don-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: #7a0000;
+  font-weight: 700;
+}
+
+/* Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  transition: 0.25s;
+  font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #a80000;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(168,0,0,0.25);
+}
+
+/* Bouton */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: linear-gradient(to right, #b30000, #7a0000);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #8a0000, #5a0000);
+}
+
+/* Message */
+.message {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.message.success {
+  background: #e7ffe7;
+  color: #2e8b57;
+}
+
+.message.error {
+  background: #ffe5e5;
+  color: #a80000;
+}

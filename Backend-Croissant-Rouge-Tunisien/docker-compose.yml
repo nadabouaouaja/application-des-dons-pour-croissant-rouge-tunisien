@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:8.1
+    container_name: croissant-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: khouloud
+      MYSQL_DATABASE: croissant_rouge
+    ports:
+      - "3377:3306"       
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

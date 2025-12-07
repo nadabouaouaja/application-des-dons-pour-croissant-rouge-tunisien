@@ -1,0 +1,65 @@
+<div class="auth-page">
+
+  <!-- PARTIE GAUCHE -->
+  <div class="auth-left">
+    <div class="overlay">
+
+      <h1>Un simple geste peut sauver une vie</h1>
+
+      <p>
+        Rejoignez la grande famille du Croissant Rouge Tunisien
+        et participez aux actions humanitaires partout dans le monde.
+      </p>
+
+      <!-- SLIDER -->
+      <img
+        class="humanitarian-img"
+        [src]="currentImage"
+        alt="Action humanitaire">
+
+    </div>
+  </div>
+
+  <!-- PARTIE DROITE -->
+  <div class="auth-right">
+    <div class="auth-card">
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+        class="logo"
+        alt="Croissant Rouge">
+
+      <h2>Connexion</h2>
+
+      <div class="message" *ngIf="message">{{ message }}</div>
+
+      <form (ngSubmit)="login()">
+
+        <input
+          class="short-input"
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Adresse email"
+          required />
+
+        <input
+          class="short-input"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Mot de passe"
+          required />
+
+        <button type="submit">Se connecter</button>
+
+        <p class="link">
+          Vous n'avez pas de compte ?
+          <a href="http://localhost:4200/register">Créer un compte</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+</div>

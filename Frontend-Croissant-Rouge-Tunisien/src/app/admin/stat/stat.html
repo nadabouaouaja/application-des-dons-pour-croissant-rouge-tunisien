@@ -1,0 +1,57 @@
+<div class="layout-wrapper">
+
+  <!-- ===== SIDEBAR GAUCHE ===== -->
+  <aside class="sidebar">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Croissant_Rouge_Tunisien_Logo.svg/2560px-Croissant_Rouge_Tunisien_Logo.svg.png"
+      class="sidebar-logo"
+      alt="Croissant Rouge"
+    />
+
+    <nav class="nav-links">
+      <!-- Utilise routerLink vers tes routes Angular -->
+      <a routerLink="/stat" class="nav-item">Statistiques</a>
+      <a routerLink="/admin" class="nav-item">Gérer éléments</a>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTENU PRINCIPAL ===== -->
+  <div class="main-content">
+
+    <!-- Header + titre existants -->
+
+
+    <!-- Cards de statistiques -->
+    <div class="stats-cards">
+      <div class="card">
+        <h3>Total dons</h3>
+        <p>{{ totalDons }}</p>
+      </div>
+      <div class="card">
+        <h3>Argent</h3>
+        <p>{{ totalArgent }}</p>
+      </div>
+      <div class="card">
+        <h3>Vêtements</h3>
+        <p>{{ totalVetements }}</p>
+      </div>
+      <div class="card">
+        <h3>Nourriture</h3>
+        <p>{{ totalNourriture }}</p>
+      </div>
+    </div>
+
+    <!-- Graphiques -->
+    <div class="charts-section">
+      <div class="chart-card">
+        <h2>Répartition des dons</h2>
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h2>Volume par catégorie</h2>
+        <canvas id="barChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+</div>

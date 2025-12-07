@@ -1,0 +1,158 @@
+/* SUPPRESSION BORDURES GLOBALES */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* GAUCHE */
+.auth-left {
+  flex: 1.3;
+  background: linear-gradient(to bottom, #b30000, #550000);
+  position: relative;
+  color: white;
+}
+
+.auth-left .overlay {
+  height: 100%;
+  padding: 60px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.auth-left h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.auth-left p {
+  font-size: 17px;
+  opacity: 0.95;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.humanitarian-img {
+  width: 620px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  margin-top: 15px;
+  margin-left: 30px;
+  transition: opacity 0.6s ease;
+}
+
+/* DROITE */
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.auth-card {
+  width: 360px;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.logo {
+  width: 130px;
+  margin-bottom: 12px;
+}
+
+.error {
+  margin-top: -6px;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #8b0000;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+
+
+.auth-card h2 {
+  margin-bottom: 20px;
+  color: #b30000;
+  font-weight: 700;
+}
+
+.short-input {
+  width: 90%;
+  padding: 11px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  width: 90%;
+  padding: 12px;
+  background: #b30000;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #820000;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link a {
+  color: #b30000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.message {
+  margin-bottom: 12px;
+  color: red;
+  font-weight: 600;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .auth-page {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    height: 50%;
+  }
+
+  .humanitarian-img {
+    width: 1300px;
+    height: 700px;
+  }
+}

@@ -1,0 +1,228 @@
+/* ===========================================
+   🔴 CROISSANT ROUGE – DASHBOARD ADMIN CLEAN
+   + SIDEBAR
+   =========================================== */
+
+/* ---- LAYOUT PRINCIPAL ---- */
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f8f8; /* Blanc doux */
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 240px;               /* largeur fixe, tu peux modifier */
+  background: white;
+  border-right: 2px solid #d10000;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  position: fixed;            /* reste fixe */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.sidebar-logo {
+  height: 50px;
+  margin-bottom: 25px;
+}
+/* ---- NAVIGATION LINKS ---- */
+.nav-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 20px;
+}
+
+/* ---- ITEM DE MENU ---- */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+
+  font-size: 17px;
+  font-weight: 600;
+  color: #b00000;
+
+  border: 2px solid transparent;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+/* Icônes */
+.nav-item i {
+  font-size: 20px;
+  color: #d10000;
+}
+
+/* ---- HOVER ---- */
+.nav-item:hover {
+  border-color: #ff4d4d;
+  background: #ffe5e5;
+  box-shadow: 0 4px 12px rgba(255,0,0,0.15);
+  transform: translateX(6px);
+}
+
+/* ---- ITEM SÉLECTIONNÉ ---- */
+.nav-item.active {
+  background: #ffcccc;
+  border-color: #d10000;
+  color: #800000;
+  font-weight: 700;
+}
+
+
+/* ---- CONTENU PRINCIPAL ---- */
+.main-content {
+  margin-left: 240px; /* même largeur que sidebar */
+  width: calc(100% - 240px);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- HEADER ---- */
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 16px 30px;
+  border-radius: 50px;
+  border: 2px solid #d10000;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  margin-bottom: 40px;
+}
+
+.logo {
+  height: 45px;
+}
+
+.header-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #b00000;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ---- CARDS ---- */
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px 15px;
+  width: 200px;
+
+  border-left: 6px solid #d10000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #b30000;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* ---- CHARTS ---- */
+.charts-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.chart-card {
+  background: #ffffff;
+  padding: 25px;
+  width: 450px;
+  border-radius: 18px;
+  border: 1.5px solid #ffb3b3;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.chart-card h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #b30000;
+  margin-bottom: 18px;
+}
+
+/* ---- ANIMATION ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 0;
+  }
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .chart-card, .card {
+    width: 90%;
+  }
+}

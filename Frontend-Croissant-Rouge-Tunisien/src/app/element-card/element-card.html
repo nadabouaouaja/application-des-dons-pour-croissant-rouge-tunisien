@@ -1,0 +1,32 @@
+<div class="element-card" *ngIf="element">
+
+  <!-- IMAGE -->
+  <div class="image-container">
+    <img
+      class="element-img"
+      [src]="element.image"
+      (error)="imageError($event)"
+      alt="Image du don">
+  </div>
+
+  <!-- CONTENU -->
+  <div class="card-content">
+
+    <h3 class="element-title">{{ element.label }}</h3>
+
+    <p class="element-description">
+      {{ element.description }}
+    </p>
+
+    <div class="badge">Humanitaire</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="element-footer">
+    <button class="don-btn" (click)="goToDon()">
+      Je donne maintenant
+    </button>
+  </div>
+
+</div>

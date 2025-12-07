@@ -1,0 +1,167 @@
+.don-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #b30000;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto 30px auto;
+
+  background: white;
+  padding: 8px 25px;
+
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  border: 2px solid #e50000;
+
+  width: fit-content;
+}
+
+.logo {
+  height: 55px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 100;
+  color: #b00000;
+  margin: 0;
+}
+
+.btn-add {
+  background: #e60000;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 25px auto;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-add:hover {
+  background: #b00000;
+  transform: scale(1.03);
+}
+
+.don-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.don-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(1,1,1,0.07);
+  border-left: 6px solid #e60000;
+  transition: 0.3s;
+}
+
+.don-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(1,1,1,0.12);
+}
+
+.don-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.don-type {
+  background: #ffe5e5;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #c40000;
+}
+
+.don-date {
+  color: #666;
+  font-size: 14px;
+}
+
+.amount {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #009900;
+  font-weight: bold;
+}
+
+.description {
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn-edit {
+  background: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background: #005fcc;
+}
+
+.btn-delete {
+  background: #ff3b3b;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #d40000;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.msg {
+  text-align: center;
+  color: #008000;
+  margin-bottom: 15px;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
